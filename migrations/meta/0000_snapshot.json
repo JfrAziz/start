@@ -71,9 +71,7 @@
         "ipcdr_user_email_unique": {
           "name": "ipcdr_user_email_unique",
           "nullsNotDistinct": false,
-          "columns": [
-            "email"
-          ]
+          "columns": ["email"]
         }
       },
       "policies": {},
@@ -169,12 +167,8 @@
           "name": "ipcdr_account_user_id_ipcdr_user_id_fk",
           "tableFrom": "ipcdr_account",
           "tableTo": "ipcdr_user",
-          "columnsFrom": [
-            "user_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["user_id"],
+          "columnsTo": ["id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         }
@@ -244,12 +238,8 @@
           "name": "ipcdr_session_user_id_ipcdr_user_id_fk",
           "tableFrom": "ipcdr_session",
           "tableTo": "ipcdr_user",
-          "columnsFrom": [
-            "user_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["user_id"],
+          "columnsTo": ["id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         }
@@ -259,9 +249,7 @@
         "ipcdr_session_token_unique": {
           "name": "ipcdr_session_token_unique",
           "nullsNotDistinct": false,
-          "columns": [
-            "token"
-          ]
+          "columns": ["token"]
         }
       },
       "policies": {},

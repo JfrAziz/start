@@ -1,6 +1,6 @@
 import tailwind from "@/styles/globals.css?url";
-import fontRadjani from "@fontsource/rajdhani?url";
 
+import { getUser } from "@/handler/user";
 import { RouterContext } from "@/router";
 import { Meta, Scripts } from "@tanstack/start";
 import { DevTools } from "@/components/ui/dev-tools";
@@ -11,6 +11,11 @@ import {
 } from "@tanstack/react-router";
 
 export const Route = createRootRouteWithContext<RouterContext>()({
+  beforeLoad: async ({ context }) => {
+    context.user = await getUser();
+
+    return context;
+  },
   head: () => ({
     meta: [
       {
@@ -21,7 +26,7 @@ export const Route = createRootRouteWithContext<RouterContext>()({
         content: "width=device-width, initial-scale=1",
       },
       {
-        title: "Dateng.in",
+        title: "Start",
       },
     ],
     links: [
@@ -53,10 +58,6 @@ export const Route = createRootRouteWithContext<RouterContext>()({
       {
         rel: "stylesheet",
         href: tailwind,
-      },
-      {
-        rel: "stylesheet",
-        href: fontRadjani,
       },
     ],
     scripts: import.meta.env.PROD

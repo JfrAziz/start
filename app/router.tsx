@@ -22,7 +22,6 @@ export function createRouter() {
 
   const router = createTanStackRouter({
     routeTree,
-    defaultSsr: false,
     context: routerContext,
   });
 
